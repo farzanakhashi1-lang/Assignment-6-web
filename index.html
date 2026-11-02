@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 6 - Selector Detective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div id="controls">
+        <button id="btn-clear">Clear</button>
+        <div id="case-buttons"></div>
+    </div>
+
+    <div id="result-box">Click a case to see the result.</div>
+
+    <div class="scene">
+        <div class="chimney"></div>
+
+        <div class="roof">
+            <div class="roof-shape"></div>
+            <div class="roof-window"></div>
+            <div class="title-plaque">The Party, 19:30 – 22:30</div>
+        </div>
+        <div class="eave"></div>
+
+        <div id="house"></div>
+
+        <div class="grass"></div>
+        <div class="ground">
+            <div class="legend">
+                <div class="legend-part">
+                    <span class="dot" style="background:#d9443a"></span>
+                    <span class="dot" style="background:#3a6fd8"></span>
+                    <span class="dot" style="background:#2e9b5f"></span>
+                    <span class="dot" style="background:#2b2b2b"></span>
+                    <span class="dot" style="background:#e8a628"></span>
+                    <span class="dot" style="background:#8a5cd6"></span>
+                    Clothing color
+                </div>
+                <div class="legend-part">
+                    <span data-icon="phone"></span> Phone
+                    <span data-icon="glasses"></span> Glasses
+                    <span data-icon="bag"></span> Bag
+                    <span data-icon="cup"></span> Cup
+                    <span data-icon="crumbs"></span> Cake crumbs
+                </div>
+                <div class="legend-part">
+                    <span data-icon="clock"></span> Arrival time
+                    <span class="legend-badge" data-icon="cap"></span> AITU student
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

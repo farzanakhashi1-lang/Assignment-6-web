@@ -1,0 +1,354 @@
+body {
+    font-family: "Space Grotesk", Arial, sans-serif;
+    background: #ffffff;
+    color: #2a2a2a;
+    margin: 20px;
+}
+
+#controls {
+    max-width: 900px;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+#controls button {
+    font-family: inherit;
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 3px;
+    background: #fffaf2;
+    color: #4a2f20;
+    border: 2px solid #4a2f20;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#controls button:hover {
+    background: #4a2f20;
+    color: #fff;
+}
+
+#btn-clear {
+    font-weight: 700;
+}
+
+#result-box {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: center;
+    font-weight: 700;
+    color: #9a4f35;
+    min-height: 20px;
+}
+
+.scene {
+    position: relative;
+    width: 860px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.chimney {
+    position: absolute;
+    top: 0;
+    right: 150px;
+    width: 34px;
+    height: 70px;
+    background-color: #b5553b;
+    background-image:
+        linear-gradient(#8e3f2a 2px, transparent 2px),
+        linear-gradient(90deg, #8e3f2a 2px, transparent 2px);
+    background-size: 17px 10px;
+    border-top: 6px solid #4a2f20;
+    z-index: 0;
+}
+
+.roof {
+    position: relative;
+    height: 115px;
+    margin: 0 20px;
+    z-index: 1;
+}
+
+.roof-shape {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    background-color: #9a4f35;
+    background-image:
+        linear-gradient(#7d3c27 2px, transparent 2px),
+        linear-gradient(90deg, #7d3c27 2px, transparent 2px);
+    background-size: 26px 13px;
+}
+
+.roof-window {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+    border-radius: 50%;
+    border: 3px solid #4a2f20;
+    background:
+        linear-gradient(#4a2f20, #4a2f20) center / 3px 100% no-repeat,
+        linear-gradient(#4a2f20, #4a2f20) center / 100% 3px no-repeat,
+        #fffaf2;
+}
+
+.title-plaque {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fffaf2;
+    border: 2px solid #4a2f20;
+    border-radius: 8px;
+    padding: 5px 40px;
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.eave {
+    height: 8px;
+    margin: 0 10px;
+    background: #4a2f20;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+#house {
+    margin: 0 40px;
+    background: #4a2f20;
+    border: 5px solid #4a2f20;
+    border-top: 0;
+}
+
+.floor {
+    display: flex;
+    margin-top: 5px;
+}
+
+.floor-label {
+    width: 34px;
+    background: #eadfcf;
+    color: #4a2f20;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 4px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    margin-left: 5px;
+}
+
+.rooms {
+    flex: 1;
+    display: flex;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+.room {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px 0;
+    border-bottom: 10px solid #d9a77f;
+    background: #fbf6ee;
+}
+
+.room-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.room[data-room="Balcony"] {
+    background: linear-gradient(#dfe9f4, #eef3f8);
+}
+
+.room[data-room="Hall"] {
+    background: repeating-linear-gradient(90deg, #fbf3e6 0 18px, #f5e7d1 18px 36px);
+}
+
+.room[data-room="Kitchen"] {
+    background-color: #fbf7f0;
+    background-image:
+        linear-gradient(#efe4d3 1px, transparent 1px),
+        linear-gradient(90deg, #efe4d3 1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+.railing {
+    height: 16px;
+    margin: 0 -12px;
+    border-top: 2px solid #4a2f20;
+    border-bottom: 2px solid #4a2f20;
+    background: repeating-linear-gradient(90deg, #4a2f20 0 2px, #ffffff 2px 18px);
+}
+
+.room.found {
+    box-shadow: inset 0 0 0 3px #e8a628;
+}
+
+.guests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 10px;
+    min-height: 92px;
+}
+
+.guest {
+    position: relative;
+    width: 52px;
+    text-align: center;
+}
+
+.avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 4px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    background: #ffffff;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.c-red .avatar    { border-color: #d9443a; }
+.c-blue .avatar   { border-color: #3a6fd8; }
+.c-green .avatar  { border-color: #2e9b5f; }
+.c-black .avatar  { border-color: #2b2b2b; }
+.c-yellow .avatar { border-color: #e8a628; }
+.c-purple .avatar { border-color: #8a5cd6; }
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1f4e8c;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge .ic {
+    width: 11px;
+    height: 11px;
+    stroke: #ffffff;
+}
+
+.name {
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.time {
+    font-size: 8px;
+    color: #777;
+}
+
+.time .ic {
+    width: 8px;
+    height: 8px;
+    vertical-align: -1px;
+    margin-right: 1px;
+}
+
+.items {
+    margin-top: 5px;
+    min-height: 12px;
+}
+
+.items .ic {
+    width: 11px;
+    height: 11px;
+    margin: 0 1px;
+}
+
+.ic {
+    fill: none;
+    stroke: #444;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.grass {
+    height: 12px;
+    margin: 0 -10px;
+    background: #7bb661;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.ground {
+    margin: -4px 0 0;
+    padding: 18px 40px 24px;
+    background-color: #8a5a3c;
+    background-image: radial-gradient(#a2724f 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    border-radius: 0 0 12px 12px;
+}
+
+.legend {
+    display: flex;
+    background: #fffaf2;
+    border: 2px solid #4a2f20;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.legend-part {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 14px;
+}
+
+.legend-part + .legend-part {
+    border-left: 1px solid #d9c8b4;
+}
+
+.legend .ic {
+    width: 13px;
+    height: 13px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-badge {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1f4e8c;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.legend-badge .ic {
+    width: 11px;
+    height: 11px;
+    stroke: #ffffff;
+}
